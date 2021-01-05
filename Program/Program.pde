@@ -1,7 +1,8 @@
 //Global Variables
 float canvas_x, canvas_y, canvas_height, canvas_width;
 float toolbar_x, toolbar_y, toolbar_width, toolbar_height;
-color white, light_blue;
+float pencil_but_x, pencil_but_y, pencil_but_width, pencil_but_height;
+color white, light_blue, grey;
 
 
 void setup() {
@@ -13,10 +14,9 @@ void setup() {
   rect(canvas_x, canvas_y, canvas_width, canvas_height);
 }
 
-
 void draw() {
 }
 
 
-void mousePressed(){
+void mousePressed() {
 }
