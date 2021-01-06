@@ -2,9 +2,10 @@
 float canvas_x, canvas_y, canvas_height, canvas_width;
 float toolbar_x, toolbar_y, toolbar_width, toolbar_height;
 float pencil_but_x, pencil_but_y, pencil_but_width, pencil_but_height;
-String pencil_but_text;
+float eraser_but_x, eraser_but_y;
+String pencil_but_text, eraser_but_text;
 color white, light_blue, grey, black;
-
+PFont but_font;
 
 void setup() {
   fullScreen();
