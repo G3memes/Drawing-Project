@@ -19,7 +19,7 @@ void tool_selected() {
     if (eraser == true) {
       if (mouseX > canvas_x && mouseX < canvas_x + canvas_width && mouseY > canvas_y+5 && mouseY < canvas_y + canvas_height && pmouseX > canvas_x && pmouseX <  canvas_x + canvas_width && pmouseY > canvas_y+5 && pmouseY < canvas_y + canvas_height) {
         stroke(white);
-        strokeWeight(stroke_weight+5);
+        strokeWeight(stroke_weight);
         smooth();
         line(mouseX, mouseY, pmouseX, pmouseY);
       }
@@ -53,6 +53,27 @@ void tool_selected() {
       if (mouseX >  style_dropdown_brush_x && mouseX < style_dropdown_brush_x + style_dropdown_brush_width && mouseY >  style_dropdown_brush_y && mouseY <  style_dropdown_brush_y + style_dropdown_brush_height) {
         // BRUSH CODE GOES HERE
       }
+    }
+  }
+
+  //---------------------------------------------LINE-WEIGHT-ONE------------------------------------------------------------
+  if (line_weight_1 == true) {
+    if (mouseX >  size_dropdown_1_x && mouseX < size_dropdown_1_x + size_dropdown_1_width && mouseY >  size_dropdown_1_y && mouseY <  size_dropdown_1_y + size_dropdown_1_height) {
+      stroke_weight = 1;
+    }
+  }
+
+  //---------------------------------------------LINE-WEIGHT-TWO------------------------------------------------------------
+  if (line_weight_2 == true) {
+    if (mouseX >  size_dropdown_2_x && mouseX < size_dropdown_2_x + size_dropdown_2_width && mouseY >  size_dropdown_2_y && mouseY <  size_dropdown_2_y + size_dropdown_2_height) {
+      stroke_weight = 5;
+    }
+  }
+
+  //---------------------------------------------LINE-WEIGHT-THREE------------------------------------------------------------
+  if (line_weight_3 == true) {
+    if (mouseX >  size_dropdown_3_x && mouseX < size_dropdown_3_x + size_dropdown_3_width && mouseY >  size_dropdown_3_y && mouseY <  size_dropdown_3_y + size_dropdown_3_height) {
+      stroke_weight = 10;
     }
   }
 }
