@@ -1,5 +1,12 @@
 //Global Variables
 
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 //---------------------------------------------CANVAS------------------------------------------------------------
 float canvas_x, canvas_y, canvas_height, canvas_width; //Canvas Variables
 
@@ -35,8 +42,19 @@ float shapes_dropdown_rect_x, shapes_dropdown_rect_y, shapes_dropdown_rect_width
 float shapes_dropdown_circle_x, shapes_dropdown_circle_y, shapes_dropdown_circle_width, shapes_dropdown_circle_height; //Shapes Dropdown Variables
 float shapes_dropdown_square_x, shapes_dropdown_square_y, shapes_dropdown_square_width, shapes_dropdown_square_height; //Shapes Dropdown Variables
 
+//---------------------------------------------EXIT-BUTTON------------------------------------------------------------
+float exit_but_x, exit_but_y;
+
+//---------------------------------------------MUSIC-ON/OFF-BUTTON------------------------------------------------------------
+float music_but_x, music_but_y;
+
+//---------------------------------------------SAVE-BUTTON------------------------------------------------------------
+float save_but_x, save_but_y;
+//---------------------------------------------RESET-BUTTON------------------------------------------------------------
+float clear_but_x, clear_but_y;
+
 //---------------------------------------------BUTTON_TEXTS------------------------------------------------------------
-String pencil_but_text, eraser_but_text, fill_but_text, style_but_text, marker_but_text, pen_but_text, brush_but_text, size_but_text, shapes_but_text, circle_but_text, square_but_text; //Button Text Variables 
+String pencil_but_text, eraser_but_text, fill_but_text, style_but_text, marker_but_text, pen_but_text, brush_but_text, size_but_text, shapes_but_text, circle_but_text, square_but_text, exit_but_text, music_but_text, music_off_but_text, save_but_text, clear_but_text; //Button Text Variables 
 
 //---------------------------------------------COLOUR-SELECTOR------------------------------------------------------------
 float colour_rect_x, colour_rect_y, colour_rect_width, colour_rect_height;
@@ -77,17 +95,37 @@ boolean line_weight_2;
 boolean line_weight_3;
 boolean circle;
 boolean square;
+boolean exit;
+boolean music_on;
+boolean music_off;
+boolean save;
 color colour_rightnow;
 boolean selected_pencil, selected_eraser, selected_fill, selected_marker, selected_pen, selected_brush, selected_size_1, selected_size_2, selected_size_3, selected_circle, selected_square;
 float stroke_weight;
 float x, y;
+int saveP = 1;
+PImage saved;
+
+Minim  minim; //creates object to access all functions
+AudioPlayer[] song = new AudioPlayer[2]; 
 
 //-------------------------------------------------SETUP---------------------------------------------------------------------
 void setup() {
   fullScreen();
+  minim = new Minim(this);
+  song[0] = minim.loadFile("Button Click.mp3");
+  song[1] = minim.loadFile("Jarico - Summer Time.mp3");
   populating_variables(); //Populates all of the variables
   tool_bar_section(); //Draws all of the buttons in the toolbar
   canvas();
+  saved = loadImage("New Save.png");
+  if (saved == null) {
+    canvas();
+  } else {
+    image(saved, canvas_x, canvas_y, canvas_width, canvas_height);
+  }
+  song[0].setGain(-10);
+  song[1].setGain(-10);
 }
 
 //--------------------------------------------------DRAW--------------------------------------------------------------------
@@ -95,21 +133,10 @@ void draw() {
   tool_bar_section(); //Draws all of the buttons in the toolbar
   tool_selected();
   dropdown_selected();
-  if (clear == true) {
-    canvas();
-    clear = false;
-  }
 }
 
 //------------------------------------------------------MOUSE-PRESSED----------------------------------------------------------------
 void mousePressed() {
   buttons();
   draw_shape();
-}
-
-//------------------------------------------------------KEY-PRESSED----------------------------------------------------------------
-void keyPressed() {
-  if (key == 'c' || key == 'C') {
-    clear = true;
-  }
 }

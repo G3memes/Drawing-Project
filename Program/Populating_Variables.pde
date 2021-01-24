@@ -152,6 +152,22 @@ void populating_variables() {
   colour_box_x_12 = colour_box_x_6;
   colour_box_y_12 = colour_box_y_1+colour_box_height*2;
 
+  //---------------------------------------------EXIT-BUTTON------------------------------------------------------------
+  exit_but_x = displayWidth*46/50;
+  exit_but_y = displayHeight*1/60;
+
+  //---------------------------------------------MUSIC-ON/OFF-BUTTON------------------------------------------------------------
+  music_but_x = displayWidth*46/50;
+  music_but_y = displayHeight*4/60;
+
+  //---------------------------------------------SAVE-BUTTON------------------------------------------------------------
+  save_but_x = displayWidth*46/50;
+  save_but_y = displayHeight*7/60;
+  
+  //---------------------------------------------RESET-BUTTON------------------------------------------------------------
+  clear_but_x = displayWidth*46/50;
+  clear_but_y = displayHeight*10/60;
+
   //----------------------------------------------BUTTON-TEXT------------------------------------------------------------
   pencil_but_text = "Pencil";
   eraser_but_text = "Eraser";
@@ -164,6 +180,11 @@ void populating_variables() {
   shapes_but_text = "Shapes";
   circle_but_text = "Circle";
   square_but_text = "Square";
+  exit_but_text = "Exit";
+  music_but_text = "Music Off";
+  music_off_but_text = "Music On";
+  save_but_text = "Save";
+  clear_but_text = "Clear";
 
   //----------------------------------------------TEXT-FONT--------------------------------------------------------------
   but_font  = createFont("Arial", 50);

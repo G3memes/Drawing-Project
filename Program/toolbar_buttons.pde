@@ -180,4 +180,55 @@ void toolbar_button() {
   strokeWeight(1);
   fill(white);
   rect(colour_box_x_12, colour_box_y_12, colour_box_width, colour_box_height);
+
+  //---------------------------------------------EXIT-BUTTON------------------------------------------------------------
+  stroke(0);
+  strokeWeight(1);
+  fill(grey);
+  rect(exit_but_x, exit_but_y, pencil_but_width, pencil_but_height);
+  fill(black);
+  textFont(but_font, displayWidth*1/132);
+  textAlign(CENTER, CENTER);
+  text(exit_but_text, exit_but_x, exit_but_y, pencil_but_width, pencil_but_height);
+
+  //---------------------------------------------MUSIC-ON/OFF-BUTTON------------------------------------------------------------
+  if (song[1].isPlaying()) {
+    stroke(0);
+    strokeWeight(1);
+    fill(grey);
+    rect(music_but_x, music_but_y, pencil_but_width, pencil_but_height);
+    fill(black);
+    textFont(but_font, displayWidth*1/132);
+    textAlign(CENTER, CENTER);
+    text(music_but_text, music_but_x, music_but_y, pencil_but_width, pencil_but_height);
+  } else {
+    stroke(0);
+    strokeWeight(1);
+    fill(grey);
+    rect(music_but_x, music_but_y, pencil_but_width, pencil_but_height);
+    fill(black);
+    textFont(but_font, displayWidth*1/132);
+    textAlign(CENTER, CENTER);
+    text(music_off_but_text, music_but_x, music_but_y, pencil_but_width, pencil_but_height);
+  }
+
+  //---------------------------------------------SAVE-BUTTON------------------------------------------------------------
+  stroke(0);
+  strokeWeight(1);
+  fill(grey);
+  rect(save_but_x, save_but_y, pencil_but_width, pencil_but_height);
+  fill(black);
+  textFont(but_font, displayWidth*1/132);
+  textAlign(CENTER, CENTER);
+  text(save_but_text, save_but_x, save_but_y, pencil_but_width, pencil_but_height);
+
+  //---------------------------------------------CLEAR-BUTTON------------------------------------------------------------
+  stroke(0);
+  strokeWeight(1);
+  fill(grey);
+  rect(clear_but_x, clear_but_y, pencil_but_width, pencil_but_height);
+  fill(black);
+  textFont(but_font, displayWidth*1/132);
+  textAlign(CENTER, CENTER);
+  text(clear_but_text, clear_but_x, clear_but_y, pencil_but_width, pencil_but_height);
 }
