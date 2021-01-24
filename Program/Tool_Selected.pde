@@ -7,7 +7,7 @@ void tool_selected() {
     //If user has selected pencil, draws using pencil
     if (pencil == true) {
       if (mouseX > canvas_x && mouseX <  canvas_x + canvas_width && mouseY > canvas_y+5 && mouseY < canvas_y + canvas_height && pmouseX > canvas_x && pmouseX <  canvas_x + canvas_width && pmouseY > canvas_y+5 && pmouseY < canvas_y + canvas_height) {
-        stroke(colour);
+        stroke(dark_grey);
         strokeWeight(stroke_weight);
         smooth();
         line(mouseX, mouseY, pmouseX, pmouseY);
@@ -43,8 +43,11 @@ void tool_selected() {
 
     //---------------------------------------------PEN------------------------------------------------------------
     if (pen == true) {
-      if (mouseX >  style_dropdown_pen_x && mouseX <   style_dropdown_pen_x + style_dropdown_pen_width && mouseY >  style_dropdown_pen_y && mouseY <  style_dropdown_pen_y + style_dropdown_pen_height) {
-        // PEN CODE GOES HERE
+      if (mouseX > canvas_x && mouseX <  canvas_x + canvas_width && mouseY > canvas_y+5 && mouseY < canvas_y + canvas_height && pmouseX > canvas_x && pmouseX <  canvas_x + canvas_width && pmouseY > canvas_y+5 && pmouseY < canvas_y + canvas_height) {
+        stroke(colour);
+        strokeWeight(stroke_weight);
+        smooth();
+        line(mouseX, mouseY, pmouseX, pmouseY);
       }
     }
 

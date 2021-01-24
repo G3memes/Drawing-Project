@@ -10,6 +10,14 @@ void buttons() {
     brush = false;
     circle = false;
     square = false;
+    selected_pencil = true;
+    selected_eraser = false;
+    selected_fill = false;
+    selected_marker = false;
+    selected_pen = false;
+    selected_brush = false;
+    selected_circle = false;
+    selected_square = false;
   }
 
   //--------------------------------------------------ERASER-BUTTON--------------------------------------------------------------------
@@ -23,6 +31,14 @@ void buttons() {
     brush = false;
     circle = false;
     square = false;
+    selected_pencil = false;
+    selected_eraser = true;
+    selected_fill = false;
+    selected_marker = false;
+    selected_pen = false;
+    selected_brush = false;
+    selected_circle = false;
+    selected_square = false;
   }
 
   //---------------------------------------------FILL-BUTTON------------------------------------------------------------
@@ -35,6 +51,14 @@ void buttons() {
     brush = false;
     circle = false;
     square = false;
+    selected_pencil = false;
+    selected_eraser = false;
+    selected_fill = true;
+    selected_marker = false;
+    selected_pen = false;
+    selected_brush = false;
+    selected_circle = false;
+    selected_square = false;
   }
 
   //---------------------------------------------STYLE-BUTTON------------------------------------------------------------
@@ -58,10 +82,18 @@ void buttons() {
     brush = false;
     circle = false;
     square = false;
+    selected_pencil = false;
+    selected_eraser = false;
+    selected_fill = false;
+    selected_marker = true;
+    selected_pen = false;
+    selected_brush = false;
+    selected_circle = false;
+    selected_square = false;
   }
 
   //---------------------------------------------PEN-BUTTON------------------------------------------------------------
-  if (mouseX >  style_dropdown_pen_x && mouseX <   style_dropdown_pen_x + style_dropdown_pen_width && mouseY >  style_dropdown_pen_y && mouseY <  style_dropdown_pen_y + style_dropdown_pen_height) {
+  if (mouseX > style_dropdown_pen_x && mouseX <   style_dropdown_pen_x + style_dropdown_pen_width && mouseY >  style_dropdown_pen_y && mouseY <  style_dropdown_pen_y + style_dropdown_pen_height) {
     pencil = false;
     eraser = false;
     fill = false;
@@ -70,6 +102,14 @@ void buttons() {
     brush = false;
     circle = false;
     square = false;
+    selected_pencil = false;
+    selected_eraser = false;
+    selected_fill = false;
+    selected_marker = false;
+    selected_pen = true;
+    selected_brush = false;
+    selected_circle = false;
+    selected_square = false;
   }
 
   //---------------------------------------------BRUSH-BUTTON------------------------------------------------------------
@@ -82,6 +122,14 @@ void buttons() {
     brush = true;
     circle = false;
     square = false;
+    selected_pencil = false;
+    selected_eraser = false;
+    selected_fill = false;
+    selected_marker = false;
+    selected_pen = false;
+    selected_brush = true;
+    selected_circle = false;
+    selected_square = false;
   }
 
   //---------------------------------------------SIZE-BUTTON------------------------------------------------------------
@@ -96,23 +144,23 @@ void buttons() {
   }
   //---------------------------------------------BUTTON-ONE------------------------------------------------------------
   if (mouseX >  size_dropdown_1_x && mouseX < size_dropdown_1_x + size_dropdown_1_width && mouseY >  size_dropdown_1_y && mouseY <  size_dropdown_1_y + size_dropdown_1_height) {
-    line_weight_1 = true;
-    line_weight_2 = false;
-    line_weight_3 = false;
+    selected_size_1 = true;
+    selected_size_2 = false;
+    selected_size_3 = false;
   }
 
   //---------------------------------------------BUTTON-TWO------------------------------------------------------------
   if (mouseX >  size_dropdown_2_x && mouseX <   size_dropdown_2_x + size_dropdown_2_width && mouseY >  size_dropdown_2_y && mouseY <  size_dropdown_2_y + size_dropdown_2_height) {
-    line_weight_1 = false;
-    line_weight_2 = true;
-    line_weight_3 = false;
+    selected_size_1 = false;
+    selected_size_2 = true;
+    selected_size_3 = false;
   }
 
   //---------------------------------------------BUTTON-THREE------------------------------------------------------------
   if (mouseX >  size_dropdown_3_x && mouseX < size_dropdown_3_x + size_dropdown_3_width && mouseY >  size_dropdown_3_y && mouseY <  size_dropdown_3_y + size_dropdown_3_height) {
-    line_weight_1 = false;
-    line_weight_2 = false;
-    line_weight_3 = true;
+    selected_size_1 = false;
+    selected_size_2 = false;
+    selected_size_3 = true;
   }
 
   //---------------------------------------------SHAPES-BUTTON------------------------------------------------------------
@@ -136,6 +184,14 @@ void buttons() {
     brush = false;
     circle = true;
     square = false;
+    selected_pencil = false;
+    selected_eraser = false;
+    selected_fill = false;
+    selected_marker = false;
+    selected_pen = false;
+    selected_brush = false;
+    selected_circle = true;
+    selected_square = false;
   }
 
   //---------------------------------------------SQUARE-BUTTON------------------------------------------------------------
@@ -148,5 +204,61 @@ void buttons() {
     brush = false;
     circle = false;
     square = true;
+    selected_pencil = false;
+    selected_eraser = false;
+    selected_fill = false;
+    selected_marker = false;
+    selected_pen = false;
+    selected_brush = false;
+    selected_circle = false;
+    selected_square = true;
+  }
+
+  if (mouseX > colour_box_x_1 && mouseX < colour_box_x_1 + colour_box_width && mouseY > colour_box_y_1 && mouseY < colour_box_y_1 + colour_box_height) {
+    colour = light_yellow;
+  }
+
+  if (mouseX > colour_box_x_2 && mouseX < colour_box_x_2 + colour_box_width && mouseY > colour_box_y_2 && mouseY < colour_box_y_2 + colour_box_height) {
+    colour = yellow;
+  }
+
+  if (mouseX > colour_box_x_3 && mouseX < colour_box_x_3 + colour_box_width && mouseY > colour_box_y_3 && mouseY < colour_box_y_3 + colour_box_height) {
+    colour = orange;
+  }
+
+  if (mouseX > colour_box_x_4 && mouseX < colour_box_x_4 + colour_box_width && mouseY > colour_box_y_4 && mouseY < colour_box_y_4 + colour_box_height) {
+    colour = red;
+  }
+
+  if (mouseX > colour_box_x_5 && mouseX < colour_box_x_5 + colour_box_width && mouseY > colour_box_y_5 && mouseY < colour_box_y_5 + colour_box_height) {
+    colour = pink;
+  }
+
+  if (mouseX > colour_box_x_6 && mouseX < colour_box_x_6 + colour_box_width && mouseY > colour_box_y_6 && mouseY < colour_box_y_6 + colour_box_height) {
+    colour = purple;
+  }
+
+  if (mouseX > colour_box_x_7 && mouseX < colour_box_x_7 + colour_box_width && mouseY > colour_box_y_7 && mouseY < colour_box_y_7 + colour_box_height) {
+    colour = dark_blue;
+  }
+
+  if (mouseX > colour_box_x_8 && mouseX < colour_box_x_8 + colour_box_width && mouseY > colour_box_y_8 && mouseY < colour_box_y_8 + colour_box_height) {
+    colour = blue;
+  }
+
+  if (mouseX > colour_box_x_9 && mouseX < colour_box_x_9 + colour_box_width && mouseY > colour_box_y_9 && mouseY < colour_box_y_9 + colour_box_height) {
+    colour = dark_green;
+  }
+
+  if (mouseX > colour_box_x_10 && mouseX < colour_box_x_10 + colour_box_width && mouseY > colour_box_y_10 && mouseY < colour_box_y_10 + colour_box_height) {
+    colour = green;
+  }
+
+  if (mouseX > colour_box_x_11 && mouseX < colour_box_x_11 + colour_box_width && mouseY > colour_box_y_11 && mouseY < colour_box_y_11 + colour_box_height) {
+    colour = black;
+  }
+
+  if (mouseX > colour_box_x_12 && mouseX < colour_box_x_12 + colour_box_width && mouseY > colour_box_y_12 && mouseY < colour_box_y_12 + colour_box_height) {
+    colour = white;
   }
 }

@@ -19,11 +19,11 @@ void populating_variables() {
 
   //----------------------------------------------ERASER-BUTTON-------------------------------------------------------------
   eraser_but_x = displayWidth*1/50;
-  eraser_but_y = displayHeight*3/60;
+  eraser_but_y = displayHeight*5/60;
 
   //---------------------------------------------FILL-BUTTON------------------------------------------------------------
   fill_but_x = displayWidth*1/50;
-  fill_but_y = displayHeight*5/60;
+  fill_but_y = displayHeight*9/60;
 
   //----------------------------------------------STYLE-BUTTON--------------------------------------------------------------
   style_but_x = displayWidth*6/50;
@@ -104,13 +104,61 @@ void populating_variables() {
   shapes_dropdown_square_height = shapes_dropdown_rect_height*1/2;
 
 
+  //---------------------------------------------COLOUR-SELECTOR------------------------------------------------------------
+  colour_rect_x = displayWidth*21/50;
+  colour_rect_y = displayHeight*4/60;
+  colour_rect_width = displayWidth*4/16;
+  colour_rect_height = displayHeight*1/8;
+
+  colour_picked_x =  colour_rect_x;
+  colour_picked_y = displayHeight*1/60;
+  colour_picked_height = displayHeight*1/20;
+
+  colour_box_x_1 = colour_rect_x+(displayWidth*1/70);
+  colour_box_y_1 = colour_rect_y+(displayHeight*1/60);
+  colour_box_width = colour_rect_width*1/10;
+  colour_box_height = colour_rect_height*1/4; 
+
+  colour_box_x_2 = colour_box_x_1+colour_box_width+(displayWidth*1/70);
+  colour_box_y_2 = colour_box_y_1;
+
+  colour_box_x_3 = colour_box_x_2+colour_box_width+(displayWidth*1/70);
+  colour_box_y_3 = colour_box_y_1;
+
+  colour_box_x_4 = colour_box_x_3+colour_box_width+(displayWidth*1/70);
+  colour_box_y_4 = colour_box_y_1;
+
+  colour_box_x_5 =  colour_box_x_4+colour_box_width+(displayWidth*1/70);
+  colour_box_y_5 = colour_box_y_1;
+
+  colour_box_x_6 = colour_box_x_5+colour_box_width+(displayWidth*1/70);
+  colour_box_y_6 = colour_box_y_1;
+
+  colour_box_x_7 = colour_box_x_1;
+  colour_box_y_7 = colour_box_y_1+colour_box_height*2;
+
+  colour_box_x_8 = colour_box_x_2;
+  colour_box_y_8 = colour_box_y_1+colour_box_height*2;
+
+  colour_box_x_9 = colour_box_x_3;
+  colour_box_y_9 = colour_box_y_1+colour_box_height*2;
+
+  colour_box_x_10 = colour_box_x_4;
+  colour_box_y_10 = colour_box_y_1+colour_box_height*2;
+
+  colour_box_x_11 = colour_box_x_5;
+  colour_box_y_11 = colour_box_y_1+colour_box_height*2;
+
+  colour_box_x_12 = colour_box_x_6;
+  colour_box_y_12 = colour_box_y_1+colour_box_height*2;
+
   //----------------------------------------------BUTTON-TEXT------------------------------------------------------------
   pencil_but_text = "Pencil";
   eraser_but_text = "Eraser";
   fill_but_text = "Fill";
-  style_but_text = "Style";
+  style_but_text = "More Tools";
   brush_but_text = "Brush";
-  pen_but_text = "Pen";
+  pen_but_text = "Colour Pen";
   marker_but_text = "Marker";
   size_but_text = "Size";
   shapes_but_text = "Shapes";
@@ -122,9 +170,20 @@ void populating_variables() {
 
   //----------------------------------------------COLOURS-----------------------------------------------------------------
   white = #FFFFFF;
+  dark_grey = #7C7C7C;
   light_blue = #93DDF7;
   grey = #C6C6C6;
   black = #000000;
+  light_yellow = #FFF700;
+  yellow = #FFC800;
+  orange = #FF9900;
+  red = #FF0000;
+  pink = #FF9BC5;
+  purple = #C700FF;
+  dark_blue = #000EFF;
+  blue = #00BDFF;
+  dark_green = #005F07;
+  green = #00FF12;
 
   //----------------------------------------------------------------------------------------------------------------------
   pencil = true;
@@ -139,7 +198,17 @@ void populating_variables() {
   style_dropdown_selected = false;
   shapes_dropdown = false;
   size_dropdown_selected = false;
+  selected_pencil = true;
+  selected_eraser = false;
+  selected_fill = false;
+  selected_marker = false;
+  selected_pen = false;
+  selected_brush = false;
+  selected_size_1 = true;
+  selected_size_2 = false;
+  selected_size_3 = false;
+  selected_circle = false;
+  selected_square = false;
   stroke_weight = 1;
   colour = 0;
-  selected = grey;
 }
