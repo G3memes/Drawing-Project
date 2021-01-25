@@ -218,7 +218,7 @@ void toolbar_button() {
   fill(grey);
   rect(save_but_x, save_but_y, pencil_but_width, pencil_but_height);
   fill(black);
-  textFont(but_font, displayWidth*1/132);
+  textFont(but_font, displayWidth*1/200);
   textAlign(CENTER, CENTER);
   text(save_but_text, save_but_x, save_but_y, pencil_but_width, pencil_but_height);
 
@@ -231,4 +231,14 @@ void toolbar_button() {
   textFont(but_font, displayWidth*1/132);
   textAlign(CENTER, CENTER);
   text(clear_but_text, clear_but_x, clear_but_y, pencil_but_width, pencil_but_height);
+
+  //---------------------------------------------VOLUME-BUTTON------------------------------------------------------------
+  stroke(0);
+  strokeWeight(1);
+  fill(grey);
+  rect(volume_but_x, volume_but_y, pencil_but_width, pencil_but_height);
+  fill(black);
+  textFont(but_font, displayWidth*1/132);
+  textAlign(CENTER, CENTER);
+  text(volume_but_text, volume_but_x, volume_but_y, pencil_but_width, pencil_but_height);
 }

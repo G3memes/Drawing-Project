@@ -88,72 +88,74 @@ void buttons() {
   }
 
   //---------------------------------------------MARKER-BUTTON------------------------------------------------------------
-  if (mouseX >  style_dropdown_marker_x && mouseX < style_dropdown_marker_x + style_dropdown_marker_width && mouseY >  style_dropdown_marker_y && mouseY <  style_dropdown_marker_y + style_dropdown_marker_height) {
-    pencil = false;
-    eraser = false;
-    fill = false;
-    marker = true;
-    pen = false;
-    brush = false;
-    circle = false;
-    square = false;
-    selected_pencil = false;
-    selected_eraser = false;
-    selected_fill = false;
-    selected_marker = true;
-    selected_pen = false;
-    selected_brush = false;
-    selected_circle = false;
-    selected_square = false;
-    song[0].rewind();
-    song[0].skip(275);
-    song[0].play();
-  }
+  if (style_dropdown == true) {
+    if (mouseX >  style_dropdown_marker_x && mouseX < style_dropdown_marker_x + style_dropdown_marker_width && mouseY >  style_dropdown_marker_y && mouseY <  style_dropdown_marker_y + style_dropdown_marker_height) {
+      pencil = false;
+      eraser = false;
+      fill = false;
+      marker = true;
+      pen = false;
+      brush = false;
+      circle = false;
+      square = false;
+      selected_pencil = false;
+      selected_eraser = false;
+      selected_fill = false;
+      selected_marker = true;
+      selected_pen = false;
+      selected_brush = false;
+      selected_circle = false;
+      selected_square = false;
+      song[0].rewind();
+      song[0].skip(275);
+      song[0].play();
+    }
 
-  //---------------------------------------------PEN-BUTTON------------------------------------------------------------
-  if (mouseX > style_dropdown_pen_x && mouseX <   style_dropdown_pen_x + style_dropdown_pen_width && mouseY >  style_dropdown_pen_y && mouseY <  style_dropdown_pen_y + style_dropdown_pen_height) {
-    pencil = false;
-    eraser = false;
-    fill = false;
-    marker = false;
-    pen = true;
-    brush = false;
-    circle = false;
-    square = false;
-    selected_pencil = false;
-    selected_eraser = false;
-    selected_fill = false;
-    selected_marker = false;
-    selected_pen = true;
-    selected_brush = false;
-    selected_circle = false;
-    selected_square = false;
-    song[0].rewind();
-    song[0].skip(275);
-    song[0].play();
-  }
+    //---------------------------------------------PEN-BUTTON------------------------------------------------------------
+    if (mouseX > style_dropdown_pen_x && mouseX <   style_dropdown_pen_x + style_dropdown_pen_width && mouseY >  style_dropdown_pen_y && mouseY <  style_dropdown_pen_y + style_dropdown_pen_height) {
+      pencil = false;
+      eraser = false;
+      fill = false;
+      marker = false;
+      pen = true;
+      brush = false;
+      circle = false;
+      square = false;
+      selected_pencil = false;
+      selected_eraser = false;
+      selected_fill = false;
+      selected_marker = false;
+      selected_pen = true;
+      selected_brush = false;
+      selected_circle = false;
+      selected_square = false;
+      song[0].rewind();
+      song[0].skip(275);
+      song[0].play();
+    }
 
-  //---------------------------------------------BRUSH-BUTTON------------------------------------------------------------
-  if (mouseX >  style_dropdown_brush_x && mouseX < style_dropdown_brush_x + style_dropdown_brush_width && mouseY >  style_dropdown_brush_y && mouseY <  style_dropdown_brush_y + style_dropdown_brush_height) {
-    pencil = false;
-    eraser = false;
-    fill = false;
-    marker = false;
-    pen = false;
-    brush = true;
-    circle = false;
-    square = false;
-    selected_pencil = false;
-    selected_eraser = false;
-    selected_fill = false;
-    selected_marker = false;
-    selected_pen = false;
-    selected_brush = true;
-    selected_circle = false;
-    selected_square = false;
-    song[0].rewind();
-    song[0].skip(275);
-    song[0].play();
+    //---------------------------------------------BRUSH-BUTTON------------------------------------------------------------
+    if (mouseX >  style_dropdown_brush_x && mouseX < style_dropdown_brush_x + style_dropdown_brush_width && mouseY >  style_dropdown_brush_y && mouseY <  style_dropdown_brush_y + style_dropdown_brush_height) {
+      pencil = false;
+      eraser = false;
+      fill = false;
+      marker = false;
+      pen = false;
+      brush = true;
+      circle = false;
+      square = false;
+      selected_pencil = false;
+      selected_eraser = false;
+      selected_fill = false;
+      selected_marker = false;
+      selected_pen = false;
+      selected_brush = true;
+      selected_circle = false;
+      selected_square = false;
+      song[0].rewind();
+      song[0].skip(275);
+      song[0].play();
+    }
   }
 
   //---------------------------------------------SIZE-BUTTON------------------------------------------------------------
@@ -171,43 +173,45 @@ void buttons() {
       size_dropdown_selected = false;
     }
   }
-  //---------------------------------------------BUTTON-ONE------------------------------------------------------------
-  if (mouseX >  size_dropdown_1_x && mouseX < size_dropdown_1_x + size_dropdown_1_width && mouseY >  size_dropdown_1_y && mouseY <  size_dropdown_1_y + size_dropdown_1_height) {
-    selected_size_1 = true;
-    selected_size_2 = false;
-    selected_size_3 = false;
-    line_weight_1 = true;
-    line_weight_2 = false;
-    line_weight_3 = false;
-    song[0].rewind();
-    song[0].skip(275);
-    song[0].play();
-  }
+  if (size_dropdown == true) {
+    //---------------------------------------------BUTTON-ONE------------------------------------------------------------
+    if (mouseX >  size_dropdown_1_x && mouseX < size_dropdown_1_x + size_dropdown_1_width && mouseY >  size_dropdown_1_y && mouseY <  size_dropdown_1_y + size_dropdown_1_height) {
+      selected_size_1 = true;
+      selected_size_2 = false;
+      selected_size_3 = false;
+      line_weight_1 = true;
+      line_weight_2 = false;
+      line_weight_3 = false;
+      song[0].rewind();
+      song[0].skip(275);
+      song[0].play();
+    }
 
-  //---------------------------------------------BUTTON-TWO------------------------------------------------------------
-  if (mouseX >  size_dropdown_2_x && mouseX <   size_dropdown_2_x + size_dropdown_2_width && mouseY >  size_dropdown_2_y && mouseY <  size_dropdown_2_y + size_dropdown_2_height) {
-    selected_size_1 = false;
-    selected_size_2 = true;
-    selected_size_3 = false;
-    line_weight_1 = false;
-    line_weight_2 = true;
-    line_weight_3 = false;
-    song[0].rewind();
-    song[0].skip(275);
-    song[0].play();
-  }
+    //---------------------------------------------BUTTON-TWO------------------------------------------------------------
+    if (mouseX >  size_dropdown_2_x && mouseX <   size_dropdown_2_x + size_dropdown_2_width && mouseY >  size_dropdown_2_y && mouseY <  size_dropdown_2_y + size_dropdown_2_height) {
+      selected_size_1 = false;
+      selected_size_2 = true;
+      selected_size_3 = false;
+      line_weight_1 = false;
+      line_weight_2 = true;
+      line_weight_3 = false;
+      song[0].rewind();
+      song[0].skip(275);
+      song[0].play();
+    }
 
-  //---------------------------------------------BUTTON-THREE------------------------------------------------------------
-  if (mouseX >  size_dropdown_3_x && mouseX < size_dropdown_3_x + size_dropdown_3_width && mouseY >  size_dropdown_3_y && mouseY <  size_dropdown_3_y + size_dropdown_3_height) {
-    selected_size_1 = false;
-    selected_size_2 = false;
-    selected_size_3 = true;
-    line_weight_1 = false;
-    line_weight_2 = false;
-    line_weight_3 = true;
-    song[0].rewind();
-    song[0].skip(275);
-    song[0].play();
+    //---------------------------------------------BUTTON-THREE------------------------------------------------------------
+    if (mouseX >  size_dropdown_3_x && mouseX < size_dropdown_3_x + size_dropdown_3_width && mouseY >  size_dropdown_3_y && mouseY <  size_dropdown_3_y + size_dropdown_3_height) {
+      selected_size_1 = false;
+      selected_size_2 = false;
+      selected_size_3 = true;
+      line_weight_1 = false;
+      line_weight_2 = false;
+      line_weight_3 = true;
+      song[0].rewind();
+      song[0].skip(275);
+      song[0].play();
+    }
   }
 
   //---------------------------------------------SHAPES-BUTTON------------------------------------------------------------
@@ -227,50 +231,52 @@ void buttons() {
     }
   }
 
-  //---------------------------------------------CIRCLE-BUTTON------------------------------------------------------------
-  if (mouseX > shapes_dropdown_circle_x && mouseX <   shapes_dropdown_circle_x + shapes_dropdown_circle_width && mouseY >  shapes_dropdown_circle_y && mouseY <  shapes_dropdown_circle_y + shapes_dropdown_circle_height) {
-    pencil = false;
-    eraser = false;
-    fill = false;
-    marker = false;
-    pen = false;
-    brush = false;
-    circle = true;
-    square = false;
-    selected_pencil = false;
-    selected_eraser = false;
-    selected_fill = false;
-    selected_marker = false;
-    selected_pen = false;
-    selected_brush = false;
-    selected_circle = true;
-    selected_square = false;
-    song[0].rewind();
-    song[0].skip(275);
-    song[0].play();
-  }
+  if (shapes_dropdown == true) {
+    //---------------------------------------------CIRCLE-BUTTON------------------------------------------------------------
+    if (mouseX > shapes_dropdown_circle_x && mouseX <   shapes_dropdown_circle_x + shapes_dropdown_circle_width && mouseY >  shapes_dropdown_circle_y && mouseY <  shapes_dropdown_circle_y + shapes_dropdown_circle_height) {
+      pencil = false;
+      eraser = false;
+      fill = false;
+      marker = false;
+      pen = false;
+      brush = false;
+      circle = true;
+      square = false;
+      selected_pencil = false;
+      selected_eraser = false;
+      selected_fill = false;
+      selected_marker = false;
+      selected_pen = false;
+      selected_brush = false;
+      selected_circle = true;
+      selected_square = false;
+      song[0].rewind();
+      song[0].skip(275);
+      song[0].play();
+    }
 
-  //---------------------------------------------SQUARE-BUTTON------------------------------------------------------------
-  if (mouseX > shapes_dropdown_square_x && mouseX < shapes_dropdown_square_x + shapes_dropdown_square_width && mouseY > shapes_dropdown_square_y && mouseY < shapes_dropdown_square_y + shapes_dropdown_square_height) {
-    pencil = false;
-    eraser = false;
-    fill = false;
-    marker = false;
-    pen = false;
-    brush = false;
-    circle = false;
-    square = true;
-    selected_pencil = false;
-    selected_eraser = false;
-    selected_fill = false;
-    selected_marker = false;
-    selected_pen = false;
-    selected_brush = false;
-    selected_circle = false;
-    selected_square = true;
-    song[0].rewind();
-    song[0].skip(275);
-    song[0].play();
+    //---------------------------------------------SQUARE-BUTTON------------------------------------------------------------
+    if (mouseX > shapes_dropdown_square_x && mouseX < shapes_dropdown_square_x + shapes_dropdown_square_width && mouseY > shapes_dropdown_square_y && mouseY < shapes_dropdown_square_y + shapes_dropdown_square_height) {
+      pencil = false;
+      eraser = false;
+      fill = false;
+      marker = false;
+      pen = false;
+      brush = false;
+      circle = false;
+      square = true;
+      selected_pencil = false;
+      selected_eraser = false;
+      selected_fill = false;
+      selected_marker = false;
+      selected_pen = false;
+      selected_brush = false;
+      selected_circle = false;
+      selected_square = true;
+      song[0].rewind();
+      song[0].skip(275);
+      song[0].play();
+    }
   }
 
   //---------------------------------------------COLOUR-BUTTON------------------------------------------------------------

@@ -105,6 +105,17 @@ float stroke_weight;
 float x, y;
 int saveP = 1;
 PImage saved;
+//
+float volume_but_x, volume_but_y;
+float volume_display_x, volume_display_y, volume_display_width, volume_display_height;
+float volume_increase_x, volume_increase_y, volume_width, volume_height;
+float volume_decrease_x, volume_decrease_y;
+int n;
+String volume_text;
+String volume;
+String volume_but_text;
+String volume_plus_text;
+String volume_minus_text;
 
 Minim  minim; //creates object to access all functions
 AudioPlayer[] song = new AudioPlayer[2]; 
@@ -125,12 +136,16 @@ void setup() {
     image(saved, canvas_x, canvas_y, canvas_width, canvas_height);
   }
   song[0].setGain(-10);
-  song[1].setGain(-10);
+  song[1].setGain(n);
 }
 
 //--------------------------------------------------DRAW--------------------------------------------------------------------
 void draw() {
+  song[1].setGain(n);
+  volume = n+26+"";
+  volume_text = volume;
   tool_bar_section(); //Draws all of the buttons in the toolbar
+  volume();
   tool_selected();
   dropdown_selected();
 }
@@ -139,4 +154,17 @@ void draw() {
 void mousePressed() {
   buttons();
   draw_shape();
+}
+
+void mouseReleased() {
+  if (mouseX > volume_decrease_x && mouseX < volume_decrease_x + volume_width && mouseY > volume_decrease_y && mouseY < volume_decrease_y + volume_height) {
+    if (n <= 5 && n > -25) {
+      n = n - 1;
+    }
+  }
+  if (mouseX > volume_increase_x && mouseX < volume_increase_x + volume_width && mouseY > volume_increase_y && mouseY < volume_increase_y + volume_height) {
+    if (n < 5 && n >= -25) {
+      n = n + 1;
+    }
+  }
 }

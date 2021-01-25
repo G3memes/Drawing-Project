@@ -36,8 +36,12 @@ void tool_selected() {
 
     //---------------------------------------------MARKER------------------------------------------------------------
     if (marker == true) {
-      if (mouseX >  style_dropdown_marker_x && mouseX <   style_dropdown_marker_x + style_dropdown_marker_width && mouseY >  style_dropdown_marker_y && mouseY <  style_dropdown_marker_y + style_dropdown_marker_height) {
-        // MARKER CODE GOES HERE
+      if (mouseX > canvas_x && mouseX < canvas_x + canvas_width && mouseY > canvas_y+5 && mouseY < canvas_y + canvas_height && pmouseX > canvas_x && pmouseX <  canvas_x + canvas_width && pmouseY > canvas_y+5 && pmouseY < canvas_y + canvas_height) {
+        stroke(colour);
+        ;
+        strokeWeight(25);
+        smooth();
+        line(mouseX, mouseY, pmouseX, pmouseY);
       }
     }
 
@@ -53,8 +57,10 @@ void tool_selected() {
 
     //---------------------------------------------BRUSH------------------------------------------------------------
     if (brush == true) {
-      if (mouseX >  style_dropdown_brush_x && mouseX < style_dropdown_brush_x + style_dropdown_brush_width && mouseY >  style_dropdown_brush_y && mouseY <  style_dropdown_brush_y + style_dropdown_brush_height) {
-        // BRUSH CODE GOES HERE
+      if (mouseX > canvas_x && mouseX <  canvas_x + canvas_width && mouseY > canvas_y+5 && mouseY < canvas_y + canvas_height && pmouseX > canvas_x && pmouseX <  canvas_x + canvas_width && pmouseY > canvas_y+5 && pmouseY < canvas_y + canvas_height) {
+        fill(colour);
+        noStroke();
+        circle(pmouseX, pmouseY, stroke_weight+displayWidth*1/198);
       }
     }
   }
@@ -84,7 +90,7 @@ void tool_selected() {
   if (exit == true) {
     exit();
   }
-  
+
   //---------------------------------------------SAVE-BUTTON------------------------------------------------------------
   if (save == true) {
     PImage temp = get(0, 216, 1980, 1080);

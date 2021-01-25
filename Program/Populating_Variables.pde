@@ -163,10 +163,30 @@ void populating_variables() {
   //---------------------------------------------SAVE-BUTTON------------------------------------------------------------
   save_but_x = displayWidth*46/50;
   save_but_y = displayHeight*7/60;
-  
+
   //---------------------------------------------RESET-BUTTON------------------------------------------------------------
   clear_but_x = displayWidth*46/50;
   clear_but_y = displayHeight*10/60;
+
+  //---------------------------------------------VOLUME-DISPLAY------------------------------------------------------------
+  volume_display_x = displayWidth*38/50;
+  volume_display_y = displayHeight*6/60;
+  volume_display_width = displayWidth*1/15;
+  volume_display_height = displayHeight*1/30;
+
+  //---------------------------------------------VOLUME-BUTTON------------------------------------------------------------
+  volume_but_x = (displayWidth*38/50)+(displayWidth*1/130);
+  volume_but_y = displayHeight*1/60;
+
+  //---------------------------------------------VOLUME-INCREASE-BUTTON------------------------------------------------------------
+  volume_increase_x = displayWidth*36/50;
+  volume_increase_y = displayHeight*6/60;
+  volume_width = displayWidth*1/30;
+  volume_height = displayHeight*1/30;
+
+  //---------------------------------------------VOLUME-DECREASE-BUTTON------------------------------------------------------------
+  volume_decrease_x = displayWidth*667/800;
+  volume_decrease_y = displayHeight*6/60;
 
   //----------------------------------------------BUTTON-TEXT------------------------------------------------------------
   pencil_but_text = "Pencil";
@@ -183,8 +203,11 @@ void populating_variables() {
   exit_but_text = "Exit";
   music_but_text = "Music Off";
   music_off_but_text = "Music On";
-  save_but_text = "Save";
+  save_but_text = "Save (for next time)";
   clear_but_text = "Clear";
+  volume_but_text = "Volume";
+  volume_plus_text = "+";
+  volume_minus_text = "-";
 
   //----------------------------------------------TEXT-FONT--------------------------------------------------------------
   but_font  = createFont("Arial", 50);
@@ -232,4 +255,5 @@ void populating_variables() {
   selected_square = false;
   stroke_weight = 1;
   colour = 0;
+  n = 0;
 }
