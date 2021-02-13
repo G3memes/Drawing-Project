@@ -132,7 +132,7 @@ void setup() {
   saved = loadImage("New Save.png");
   if (saved == null) {
     canvas();
-  } else {
+  } else {  
     image(saved, canvas_x, canvas_y, canvas_width, canvas_height);
   }
   song[0].setGain(-10);
